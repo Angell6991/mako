@@ -5,7 +5,7 @@ history=1
 max-visible=1
 
 background-color=#292929
-text-color=#B8B8B8
+text-color=#d2d1d1
 text-alignment=center
 
 margin=36,550
@@ -24,13 +24,13 @@ font=Inconsolata Nerd Font 14
 
 
 [urgency=low]
-border-color=#00CCDE
+border-color=#33fffc
 
 [urgency=normal]
-border-color=#111111
+border-color=#d2d1d1
 
 [urgency=high]
-border-color=#00CCDE
+border-color=#33fffc
 default-timeout=0
 
 [category=mpd]
