@@ -6,13 +6,19 @@ export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1000/bus"
 battery=$(cat /sys/class/power_supply/BAT0/capacity)
 status=$(cat /sys/class/power_supply/BAT0/status)
 
+
 if      [ "$status" = "Full" ]; then
     notify-send "󰂄 Battery: $battery%" "full charge"
-        
+    ffplay -nodisp -autoexit ~/.config/mako/scripts/songs/Blip.mp4
+    
+
 elif    [ "$status" = "Discharging" ]; then
-    if  [ $battery -le 20 ]; then
+    
+    if  [ $battery -le 15 ]; then
         notify-send "󰁻 Battery: $battery%" "low battery level"
+        ffplay -nodisp -autoexit ~/.config/mako/scripts/songs/Blip.mp4
     fi
+
 
 fi
 
