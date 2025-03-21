@@ -16,7 +16,7 @@ if      [ "$status" = "Full" ]; then
 
 elif    [ "$status" = "Discharging" ]; then
     
-    if  [ $battery -le 99 ]; then
+    if  [ $battery -le 15 ]; then
         notify-send "󰁻 Battery: $battery%" "low battery level"
         ffplay -nodisp -autoexit ~/.config/mako/scripts/songs/Blip.mp4
     fi
