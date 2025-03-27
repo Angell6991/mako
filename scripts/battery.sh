@@ -16,7 +16,6 @@ if      [ "$status" = "Full" ]  &&  [ ! -f "$ctl_batt_full" ]; then
     notify-send "󰂄 Battery: $battery%" "full charge"
     ffplay -nodisp -autoexit ~/.config/mako/scripts/songs/Blip.mp4
     touch   $ctl_batt_full
-    rm -f   $ctl_batt_dis    
 
 elif    [ "$status" = "Discharging" ]; then
     
