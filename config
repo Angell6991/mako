@@ -15,12 +15,13 @@ height=150
 border-size=1
 border-radius=10
 
-
 icons=0
 max-icon-size=64
 default-timeout=5000
 ignore-timeout=1
 font=Inconsolata Nerd Font 14
+
+actions=0
 
 
 [urgency=low]
