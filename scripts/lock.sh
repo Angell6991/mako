@@ -12,4 +12,6 @@ else
     ~/.eww/target/release/eww -c ~/.config/eww/widget_lock kill &
     hypridle &
 
+    hyprctl reload &
+
 fi
