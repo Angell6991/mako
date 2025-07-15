@@ -3,14 +3,13 @@
 #############################################################
 ###---------Importar_librerys_for_slurp_and_grim----------###
 #############################################################
-import  os
 import  subprocess
 
 ###--------Ruta_temporal_para_guardar_la_captura----------###
-temp_path = "/tmp/capture.png"
+temp_path   =   "/tmp/capture_latex_ocr.png"
+temp_file   =   "/tmp/capture_latex_ocr.txt"
 
 ###-------Usar_slurp_y_grim_para_capturar_una_región------###
-print("Selecciona un área de la pantalla...")
 region = subprocess.check_output(["slurp"]).decode().strip()
 
 ###---------Capturar_la_imagen_de_esa_región--------------###
@@ -28,13 +27,18 @@ img = Image.open(temp_path)
 
 ###----------------Procesar_con_LatexOCR------------------###
 model = LatexOCR()
-os.system("clear")
 print(model(img))
 
 
-# Enviar notificación usando notify-send (usa Unicode para el ícono de imagen)
+###-------------------Save_file_supotr--------------------###
+mol   =   str(model(img))
+with open(temp_file , "a") as archivo:
+    archivo.write(mol + "\n" + "\n")
+
+
+###--------Enviar_notificación_usando_notify-send---------###
 notification_title = "  Processed screenshot:"
-notification_body = "LaTeX equation code"  # Preview de resultado
+notification_body = "LaTeX equation code"  
 
 subprocess.run([
     "notify-send",
