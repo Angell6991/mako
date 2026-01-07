@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Captura de pantalla
-grim -g "$(slurp)" ~/Imágenes/capturas/$(date +%Y-%m-%d-%T).png
+grim -g "$(slurp)" ~/Images/capturas/$(date +%Y-%m-%d-%T).png
 
 # Enviar la notificación a Mako
-notify-send "  Screenshot:" "~/Imágenes/capturas/"
+notify-send "  Screenshot:" "~/Images/capturas/"

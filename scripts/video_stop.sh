@@ -4,4 +4,4 @@
 killall wf-recorder
 
 # Enviar la notificación a Mako
-notify-send "󰕨  Stop screen recording:" "~/Imágenes/capturas/"
+notify-send "󰕨  Stop screen recording:" "~/Images/capturas/"
