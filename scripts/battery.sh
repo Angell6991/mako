@@ -15,13 +15,15 @@ ctl_batt_dis="/tmp/battery_dischar"
 
 if      [ "$status" = "Full" ]  &&  [ ! -f "$ctl_batt_full" ]; then
     notify-send "󱈑 Battery: $battery%" "full charge"
-    ffplay -nodisp -autoexit ~/.config/mako/scripts/songs/Blip.mp4
+    # ffplay -nodisp -autoexit ~/.config/mako/scripts/songs/Blip.mp4
+    ffplay -nodisp -autoexit ~/.config/mako/scripts/songs/starcratf/investigacion.mp3
     touch   $ctl_batt_full
 
 
 elif    [ "$status" = "Not charging" ]  &&  [ ! -f "$ctl_batt_not" ]; then
     notify-send "󰂃 Battery: $battery%" "Not charging"
-    ffplay -nodisp -autoexit ~/.config/mako/scripts/songs/Blip.mp4
+    # ffplay -nodisp -autoexit ~/.config/mako/scripts/songs/Blip.mp4
+    ffplay -nodisp -autoexit ~/.config/mako/scripts/songs/starcratf/aterrizaje.mp3
     touch   $ctl_batt_not
 
 
@@ -29,7 +31,8 @@ elif    [ "$status" = "Discharging" ]; then
     
     if  [ $battery -le 20 ]  &&  [ ! -f "$ctl_batt_dis" ]; then
         notify-send "󰁻 Battery: $battery%" "low battery level"
-        ffplay -nodisp -autoexit ~/.config/mako/scripts/songs/Blip.mp4
+        # ffplay -nodisp -autoexit ~/.config/mako/scripts/songs/Blip.mp4
+        ffplay -nodisp -autoexit ~/.config/mako/scripts/songs/starcratf/energia.mp3
         touch   $ctl_batt_dis
     fi
 
