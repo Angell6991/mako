@@ -1,0 +1,42 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;---------------def_widgets---------------------;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+(defwidget icon-lock []
+    (box
+        :class "gif-container_00"
+        (box 
+            :class "gif-container_01"
+            (image
+                :path   "adjutora_small.gif"
+            ) 
+        )
+    )
+)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;-----------------def_widget--------------------;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defwindow adjutora-icon-glass
+    :monitor 0 
+    :class "bar-window"
+    :stacking "fg" 
+    :geometry 
+    (geometry 
+        :x "6%" 
+        :y "10px" 
+        :width "5%" 
+        :height "30px"
+        :anchor "top right"
+    )
+    (box
+        :orientation "v" 
+        :spacing "10"           ;;45
+        ;:space-evenly "false"   ;;espacio estre widget valor buleano: true ó false
+        (icon-lock)
+    )
+)
+
