@@ -4,17 +4,17 @@ max-history=1
 history=1
 max-visible=1
 
-background-color=#002424
+background-color=#292929aa
 text-color=#d2d1d1
 text-alignment=center
 
-anchor=top-right
-margin=20,70
+anchor=top-center
+margin=36,0
 width=200
 height=150
 
 border-size=2
-border-radius=5
+border-radius=10
 
 icons=0
 max-icon-size=64
@@ -26,13 +26,13 @@ actions=0
 
 
 [urgency=low]
-border-color=#e2e2e2
+border-color=#33fffc
 
 [urgency=normal]
-border-color=#e2e2e2
+border-color=#d2d1d1
 
 [urgency=high]
-border-color=#e2e2e2
+border-color=#33fffc
 default-timeout=0
 
 [category=mpd]
