@@ -7,5 +7,7 @@ brightnessctl set +10%
 BRIGHTNESS=$(brightnessctl | grep -oP '\d+(?=%)')
 
 # Mostrar la notificación con mako
-notify-send "brightness:" "  $BRIGHTNESS%"
+# notify-send "brightness:" "  $BRIGHTNESS%"
+dunstify -h int:value:"$BRIGHTNESS" -t 2000 -r 2593 "brightness:   $BRIGHTNESS %"
+
 

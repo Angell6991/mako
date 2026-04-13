@@ -7,4 +7,7 @@ amixer sset Master 5%+
 VOL=$(pamixer --get-volume-human)
 
 # Enviar la notificación a Mako
-notify-send "Volume:" "  $VOL"
+# notify-send "Volume:" "  $VOL"
+dunstify -h int:value:"$(pamixer --get-volume)" -t 2000 -r 2593 "Volume:   $(pamixer --get-volume) %"
+
+
