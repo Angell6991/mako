@@ -1,13 +1,15 @@
 #!/bin/bash
 
-# Disminuye  el brillo de la pantalla
-brightnessctl set 10%-
-
 # Obtener el brillo actual usando brightnessctl
 BRIGHTNESS=$(brightnessctl | grep -oP '\d+(?=%)')
 
-# Mostrar la notificación con mako
-# notify-send "brightness:" "  $BRIGHTNESS%"
-dunstify -h int:value:"$BRIGHTNESS" -t 2000 -r 2593 "brightness:   $BRIGHTNESS %"
+if  [ $BRIGHTNESS -le 10 ]; then
+    dunstify -h int:value:"$BRIGHTNESS" -t 2000 -r 2593 "brightness:   $BRIGHTNESS %"
+else
+    BRIGHTNESS=$(brightnessctl | grep -oP '\d+(?=%)')
+    brightnessctl set 10%-
+    dunstify -h int:value:"$BRIGHTNESS" -t 2000 -r 2593 "brightness:   $BRIGHTNESS %"
+fi
+
 
 
