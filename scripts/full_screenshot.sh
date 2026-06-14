@@ -8,6 +8,7 @@ grim $NAME
 notify-send "󰋩 Screenshot:" "~/Images/capturas/"
 
 # Abrir editor de imagen
-satty --filename $NAME 
+# satty --filename $NAME 
+satty --filename $NAME --output-filename $NAME
 
 
